@@ -11,12 +11,12 @@ enum CurrentLight {
     case red, yellow, green
 }
 struct ContentView: View {
-    @State private var currentLight = CurrentLight.red
-    @State private var onTap = "Start"
-    
     @State var redLight = Color.red
     @State var yellowLight = Color.yellow
     @State var greenLight = Color.green
+    
+    @State private var currentLight = CurrentLight.red
+    @State private var onTap = "Start"
     
     private var isOn = 1.0
     private var isOff = 0.3
@@ -57,17 +57,17 @@ struct ContentView: View {
                         .font(.title)
                         .foregroundColor(.white)
                         .padding()
-                        .background(.blue)
                         .overlay(RoundedRectangle(cornerRadius: 10)
                                     .stroke(Color.white, lineWidth: 4)
                         )
+                        .background(.blue)
+                        .shadow(radius: 10)
                 }
             }
             .padding()
         }
     }
 }
-
 
 private var circleView: some View {
     Circle()
